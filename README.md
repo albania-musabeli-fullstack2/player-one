@@ -7,7 +7,8 @@ El sitio está compuesto por:
 * Página Principal
 * Páginas con categorías de productos
 * Página de contacto
-
+* Registro de usuario
+* Inicio de sesión
 
 ## Desarrollo
 
