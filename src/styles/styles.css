@@ -54,16 +54,6 @@ body {
 }
 
 
-/* Ajustar espacio entre col de Contacto en pantallas lg */
-@media (min-width: 992px) {
-    .row > .col-lg-4,
-    .row > .col-lg-6 {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-}
-
-
 .icon_shop {
     width: 30px;
     height: auto;
