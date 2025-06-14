@@ -1,3 +1,34 @@
 import { Routes } from '@angular/router';
+import { ECommerceLayout } from './e-commerce/layout/e-commerce-layout/e-commerce-layout';
+import { AdminLayout } from './admin/layout/admin-layout/admin-layout';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path:'',
+        component: ECommerceLayout,
+        children:[
+            {
+                path: '',
+                loadComponent: () => import('./e-commerce/pages/home/home')
+            }
+        ]
+    },
+    {
+        path:'admin',
+        component: AdminLayout,
+        children: [
+            {
+                path: 'productos',
+                loadComponent: () => import('./admin/pages/productos/productos')
+            },
+            {
+                path: '**',
+                redirectTo: 'productos'
+            }
+        ]
+    },
+    {
+        path:'**',
+        redirectTo: ''
+    }
+];

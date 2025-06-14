@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-admin-layout',
   imports: [
     RouterOutlet
   ],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './admin-layout.html',
+  styleUrl: './admin-layout.scss'
 })
-export class App {
-  protected title = 'player-one';
+export class AdminLayout {
+
 }
