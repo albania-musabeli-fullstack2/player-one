@@ -10,6 +10,14 @@ export const routes: Routes = [
             {
                 path: '',
                 loadComponent: () => import('./e-commerce/pages/home/home')
+            },
+            {
+                path: 'contacto',
+                loadComponent: () => import('./e-commerce/pages/contacto/contacto')
+            },
+            {
+                path: 'categoria/:id',
+                loadComponent: () => import('./e-commerce/pages/categoria-producto/categoria-producto')
             }
         ]
     },

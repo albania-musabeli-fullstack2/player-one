@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { Producto, ProductosService } from '../../services/productos';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export default class Home {
+export default class Home implements OnInit {
+
+  public productos = signal<Producto[]>([]);
+
+  private productosService = inject(ProductosService);
+
+
+  ngOnInit(): void {
+      this.productos.set(this.productosService.listaProductos().filter(prod => prod.consola === 'Super Famicom' ))
+  }
 
 }

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">
+            PLAYER ONE
+            <img class="logo_navbar" src="./img/GamePadModern1.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-light fw-bold" aria-current="page" [routerLink]="['/']">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorías
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" [routerLink]="['/categoria', 'nintendo']">Nintendo/SNES</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/categoria', 'playstation']">PlayStation</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/categoria', 'sega']">Sega</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/categoria', 'accesorios']">Accesorios</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light fw-bold" [routerLink]="['/contacto']">Contacto</a>
+                </li>
+            </ul>
+
+            <!-- Botón de Acceder en el navbar -->
+            <div class="ms-auto" id="navbar_perfil">
+                <a href="./pages/login.html" class="btn btn-light fw-bold me-2">Acceder</a>
+                <a href="./pages/admin/login_admin.html" class="btn btn-warning fw-bold me-2">ADMIN</a>
+            </div>
+        </div>
+    </div>
+</nav>

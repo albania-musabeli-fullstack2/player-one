@@ -1,1 +1,36 @@
-<p>home works!</p>
+<main class="container">
+    <section class="main_title text-center px-5 animate__animated animate__fadeInUp">
+        <h1 class="">
+            PLAYER ONE
+            <img class="logo_navbar pb-2" src="./img/GamePadModern1Purple.png" alt="logo">
+        </h1>
+        <p class="px-5 mx-5 d-none d-md-block">Explora nuestra exclusiva colección de juegos y accesorios retro
+            importados
+            directamente desde
+            Japón. Revive la magia de Nintendo, PlayStation y Sega con títulos clásicos y ediciones únicas para
+            coleccionistas.</p>
+    </section>
+
+    <hr>
+    <section class="card_games mt-5">
+        <h3 class="fw-light pb-4 text-center">Nuestros últimos productos</h3>
+
+        <div class="row justify-content-center ms-lg-5">
+            @for (producto of productos(); track $index) {
+            <div class="col mb-4">
+                <div class="card border-0 shadow card_hover" style="width: 18rem;">
+                    <img [src]="producto.urlImagen" class="card-img-top" alt="img_donkeykong1">
+                    <div class="card-body">
+                        <span class="card-text">{{ producto.nombre }}</span>
+                        <div class="mb-2">
+                            <span>$ {{ producto.precio }}</span>
+                        </div>
+                        <span class="badge rounded-pill text-bg-primary me-2">{{ producto.consola }}</span>
+                        <span class="badge rounded-pill text-bg-success">{{ producto.categoriaJuego }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</main>
