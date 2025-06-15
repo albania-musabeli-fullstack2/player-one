@@ -5,6 +5,8 @@
     --color-boton-hover: #5e26c7;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body {
     background-color: #ced4e5;
@@ -168,3 +170,5 @@ body {
     background-color: #bb2d3b;
     color: #fff !important;
 }
+
+

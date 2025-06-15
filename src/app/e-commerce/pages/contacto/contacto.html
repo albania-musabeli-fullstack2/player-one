@@ -1,1 +1,50 @@
-<p>contacto works!</p>
+<section class="mt-5">
+    <h1 class="animate__animated animate__fadeInLeft">Contacto</h1>
+    <hr class="border-2">
+
+    <div class="row justify-content-center g-4 mt-4">
+        <div class="col-lg-5 col-md-12">
+            <h4 class="text-center mb-4">Si tienes una duda, envíanos un correo</h4>
+
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <form [formGroup]="formContacto">
+                        <div class="mb-3">
+                            <input formControlName="nombre" type="text" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <input formControlName="correo" type="email" class="form-control"
+                                id="exampleFormControlInput2" placeholder="Correo">
+                        </div>
+                        <div class="mb-3">
+                            <input formControlName="telefono" type="tel" class="form-control"
+                                id="exampleFormControlInput3" placeholder="Teléfono. Ej: 912345678">
+                        </div>
+                        <div class="mb-3">
+                            <textarea formControlName="comentarios" rows="3" class="form-control"
+                                id="exampleFormControlInput4" placeholder="Ingrese sus comentarios"></textarea>
+                        </div>
+                        <button (click)="enviarContacto()" type="button" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-12">
+            <h4 class="text-center">¿Dónde encontrarnos?</h4>
+            <h6 class="m-3">
+                <mat-icon style="color: blueviolet;">location_on</mat-icon>
+                Dirección: Calle Quinta 1234, Viña del mar
+            </h6>
+
+            <h6 class="m-3">
+                <mat-icon style="color: blueviolet;">call</mat-icon>
+                Teléfono: +32 2568 546
+            </h6>
+            <img class="card-img-top" src="/img/mapa_tienda.png" alt="">
+
+        </div>
+    </div>
+</section>
