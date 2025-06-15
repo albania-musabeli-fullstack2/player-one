@@ -1,0 +1,11 @@
+<div class="card border-0 shadow card_hover" style="width: 18rem;">
+    <img [src]="producto()?.urlImagen" class="card-img-top" alt="img_donkeykong1">
+    <div class="card-body">
+        <span class="card-text">{{ producto()?.nombre }}</span>
+        <div class="mb-2">
+            <span>$ {{ producto()?.precio }}</span>
+        </div>
+        <span class="badge rounded-pill text-bg-primary me-2">{{ producto()?.consola }}</span>
+        <span class="badge rounded-pill text-bg-success">{{ producto()?.categoriaJuego }}</span>
+    </div>
+</div>
