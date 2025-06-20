@@ -1,1 +1,12 @@
-<p>categoria-producto works!</p>
+<section class="mt-5">
+    <h1 class="animate__animated animate__fadeInLeft">{{ nombreCategoria() }}</h1>
+    <hr class="border-2">
+
+    <div class="row">
+        @for (producto of productosByCategoria(); track $index) {
+        <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+            <card-product [producto]="producto"></card-product>
+        </div>
+        }
+    </div>
+</section>
