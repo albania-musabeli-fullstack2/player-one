@@ -1,0 +1,50 @@
+<h1 class="mt-5 animate__animated animate__fadeInLeft">Iniciar Sesión</h1>
+<hr class="border-2">
+
+<div class="row mt-5">
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="card shadow border-0 rounded-2">
+            <div class="card-body">
+
+                <form [formGroup]="formLogin">
+                    <div class="mb-3">
+                        <label>Correo</label>
+                        <input formControlName="correo" type="email" class="form-control" id="correo"
+                            placeholder="correo@correo.cl">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Contraseña</label>
+                        <input formControlName="password" type="text" class="form-control" id="password"
+                            placeholder="contraseña">
+                    </div>
+                    <button (click)="ingresar()" type="button" class="btn btn-primary">Ingresar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-2 d-flex justify-content-between">
+            <a href="./registro.html">¿No tiene una cuenta?</a>
+            <a href="">¿Olvidó su contraseña?</a>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- 
+ 
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <input type="text" class="form-control" id="login_mail" placeholder="Ingrese su correo">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="login_pass" placeholder="Ingrese su contraseña">
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="button" id="btn_ingresar">Ingresar</button>
+                </div>
+-->

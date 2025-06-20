@@ -34,8 +34,12 @@
 
             <!-- Botón de Acceder en el navbar -->
             <div class="ms-auto" id="navbar_perfil">
-                <a href="./pages/login.html" class="btn btn-light fw-bold me-2">Acceder</a>
-                <a href="./pages/admin/login_admin.html" class="btn btn-warning fw-bold me-2">ADMIN</a>
+                @if (usuario()) {
+                <a [routerLink]="['/perfil']" class="btn btn-light fw-bold me-2">Perfil</a>
+                }
+                @else {
+                <a [routerLink]="['/login']" class="btn btn-light fw-bold me-2">Acceder</a>
+                }
             </div>
         </div>
     </div>

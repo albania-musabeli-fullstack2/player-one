@@ -18,6 +18,14 @@ export const routes: Routes = [
             {
                 path: 'categoria/:id',
                 loadComponent: () => import('./e-commerce/pages/categoria-producto/categoria-producto')
+            },
+            {
+                path: 'login',
+                loadComponent: () => import('./e-commerce/pages/login/login')
+            },
+            {
+                path: 'registro',
+                loadComponent: () => import('./e-commerce/pages/registro/registro')
             }
         ]
     },
