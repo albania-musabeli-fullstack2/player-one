@@ -7,12 +7,19 @@ import { Usuario } from '../../interfaces/usuario.interface';
 export class LocalStorageService {
 
   private storageKey = 'usuarios';
+  private storageKeyLogin = 'usuario_login';
+
   private usuario = signal<Usuario | null>(null);
   public usuarioLogin = computed(() => this.usuario());
 
 
   constructor() {
     this.initUsuarios();
+
+    const usuarioGuardado = this.getUsuarioLogin();
+    if (usuarioGuardado) {
+      this.usuario.set(usuarioGuardado);
+    }
   }
 
 
@@ -42,12 +49,12 @@ export class LocalStorageService {
   }
 
 
-  getUsuarios(): Usuario[]{
+  getUsuarios(): Usuario[] {
     const usuarios = localStorage.getItem(this.storageKey);
     return usuarios ? JSON.parse(usuarios) : [];
   }
 
-  agregarUsuario(nuevoUsuario: Usuario){
+  agregarUsuario(nuevoUsuario: Usuario) {
     const usuarios = this.getUsuarios();
     usuarios.push(nuevoUsuario);
     localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
@@ -65,8 +72,24 @@ export class LocalStorageService {
   }
 
 
-  public setUsuarioLogin(usuario: Usuario){
+  public setUsuarioLogin(usuario: Usuario) {
     this.usuario.set(usuario);
+    localStorage.setItem(this.storageKeyLogin, JSON.stringify(usuario));
   }
+
+
+  // Obtener usuario logueado desde local storage
+  public getUsuarioLogin(): Usuario | null {
+    const usuarioData = localStorage.getItem(this.storageKeyLogin);
+    return usuarioData ? JSON.parse(usuarioData) : null;
+  }
+
+
+  // Cerrar sesión y eliminar del local Storage
+  public logout(){
+    this.usuario.set(null);
+    localStorage.removeItem(this.storageKeyLogin);
+  }
+
 
 }

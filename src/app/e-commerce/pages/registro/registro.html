@@ -1,1 +1,51 @@
-<p>registro works!</p>
+<h1 class="mt-5 animate__animated animate__fadeInLeft">Crear una cuenta</h1>
+<hr class=" border-2">
+
+<div class="row mt-5">
+    <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="card shadow border-0 rounded-2">
+            <div class="card-body">
+                <form [formGroup]="formRegistro">
+                    <div class="mb-3">
+                        <input formControlName="nombre" type="text" class="form-control" id="nombre"
+                            placeholder="Nombre Completo">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="usuario" type="text" class="form-control" id="usuario"
+                            placeholder="Usuario">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="correo" type="email" class="form-control" id="correo"
+                            placeholder="correo@correo.com">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="pass1" type="password" class="form-control" id="pass1"
+                            placeholder="Contraseña">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="pass2" type="password" class="form-control" id="pass2"
+                            placeholder="Repetir contraseña">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="nacimiento" type="date" class="form-control" id="nacimiento"
+                            placeholder="Nacimiento">
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="direccion" type="text" class="form-control" id="direccion"
+                            placeholder="Dirección (calle, número, depto, ciudad)">
+                    </div>
+                    <button (click)="nuevoUsuario()" type="button" class="btn btn-primary">Registrarse</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <a [routerLink]="['/login']">Ya tengo una cuenta</a>
+            <div class="float-end">
+                <button (click)="limpiarFormulario()"  id="btn_limpiar_form" type="button" class="btn btn-secondary btn-sm">Limpiar
+                    Formulario</button>
+
+            </div>
+        </div>
+    </div>
+</div>
