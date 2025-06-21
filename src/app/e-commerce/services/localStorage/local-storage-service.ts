@@ -33,7 +33,8 @@ export class LocalStorageService {
           correo: 'amusabeli@gmail.com',
           password: 'Actividad123456!',
           fechaNacimiento: '07/09/1989',
-          direccion: 'Calle Libertad 2025, Viña del mar'
+          direccion: 'Calle Libertad 2025, Viña del mar',
+          telefono: '945678945'
         },
         {
           nombre: 'Verónica Aguilera',
@@ -41,7 +42,8 @@ export class LocalStorageService {
           correo: 'vaguilera@gmail.com',
           password: 'Juegos456789#',
           fechaNacimiento: '09/07/1998',
-          direccion: 'Av. Osorno 456, Santiago'
+          direccion: 'Av. Osorno 456, Santiago',
+          telefono: '978945612'
         }
       ];
       localStorage.setItem(this.storageKey, JSON.stringify(usuariosIniciales));

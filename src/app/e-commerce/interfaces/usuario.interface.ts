@@ -5,4 +5,5 @@ export interface Usuario {
     password: string;
     fechaNacimiento: string; // DD/MM/YYYY
     direccion: string;
+    telefono: string;
 }

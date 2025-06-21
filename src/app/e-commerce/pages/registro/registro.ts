@@ -38,7 +38,8 @@ export default class Registro {
     pass1: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$/)]],
     pass2: ['', [Validators.required]],
     nacimiento: ['', [Validators.required, mayorDeEdadValidator]],
-    direccion: ['', [Validators.required, Validators.minLength(5)]]
+    direccion: ['', [Validators.required, Validators.minLength(5)]],
+    telefono: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]] // permite solo 9 números
   },
     {
       validators: [passwordIgualesValidation()]
@@ -48,7 +49,7 @@ export default class Registro {
 
   nuevoUsuario() {
     console.log('Nuevo usuario', this.formRegistro.value)
-    const { nombre, usuario, correo, pass1, pass2, nacimiento, direccion } = this.formRegistro.value;
+    const { nombre, usuario, correo, pass1, pass2, nacimiento, direccion, telefono } = this.formRegistro.value;
 
     if (!nombre || this.formRegistro.controls.nombre.invalid) {
       this.alertService.handlerAlerta('Advertencia', 'Ingrese un nombre válido (mínimo 2 letras)', 'warning');
@@ -95,9 +96,15 @@ export default class Registro {
       return;
     }
 
-    // Guardar usuario nuevo en local Storge
+    if (!telefono || this.formRegistro.controls.telefono.invalid) {
+      this.alertService.handlerAlerta('Advertencia', 'Ingrese un teléfono válido', 'warning');
+      return;
+    }
+
+
+    // Guardar usuario nuevo en el local Storage
     this.localStoSrv.agregarUsuario({
-      nombre, usuario, correo, password: pass1, fechaNacimiento: nacimiento, direccion
+      nombre, usuario, correo, password: pass1, fechaNacimiento: nacimiento, direccion, telefono
     })
 
     this.alertService.handlerAlerta('Éxito', 'Usuario registrado correctamente', 'success');
