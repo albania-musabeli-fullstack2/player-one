@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Editar perfil</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="container">
+        <form [formGroup]="formPerfil">
+            <div class="row">
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control" id="nombre"
+                        placeholder="Nombre Completo">
+                </div>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Usuario</label>
+                    <input formControlName="usuario" type="text" class="form-control" id="usuario"
+                        placeholder="Nombre de usuario">
+                </div>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Correo</label>
+                    <input formControlName="correo" type="email" class="form-control" id="correo"
+                        placeholder="correo@correo.com">
+                </div>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Fecha de Nacimiento</label>
+                    <input formControlName="nacimiento" type="date" class="form-control" id="nacimiento"
+                        placeholder="Nacimiento">
+                </div>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Dirección</label>
+                    <input formControlName="direccion" type="text" class="form-control" id="direccion"
+                        placeholder="Dirección (calle, número, depto, ciudad)">
+                </div>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <label class="form-label">Teléfono</label>
+                    <input formControlName="telefono" type="text" class="form-control" id="telefono"
+                        placeholder="Teléfono: Ej: 912345678">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button (click)="actualizar()" class="btn btn-primary btn-lg px-4 me-md-2">
+        Actualizar
+    </button>
+
+    <button mat-dialog-close class="btn btn-secondary btn-lg px-4 me-md-2">
+        Cerrar
+    </button>
+</mat-dialog-actions>

@@ -88,10 +88,22 @@ export class LocalStorageService {
 
 
   // Cerrar sesión y eliminar del local Storage
-  public logout(){
+  public logout() {
     this.usuario.set(null);
     localStorage.removeItem(this.storageKeyLogin);
   }
 
+
+  // editar perfil en el local Storage
+  actualizarUsuario(usuarioActualizado: Usuario) {
+    const usuarios = this.getUsuarios();
+    const index = usuarios.findIndex(u => u.correo === usuarioActualizado.correo);
+
+    if (index !== -1) {
+      usuarios[index] = usuarioActualizado;
+      localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+      this.setUsuarioLogin(usuarioActualizado);
+    }
+  }
 
 }

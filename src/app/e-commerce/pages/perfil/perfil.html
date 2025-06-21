@@ -17,13 +17,13 @@
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center bg-white">
                 <h5 class="card-title mb-0">Información Personal</h5>
-                <button class="btn btn-outline-primary btn-sm">
+                <button (click)="openEditarPerfil()" class="btn btn-outline-primary btn-sm">
                     <span class="material-icons me-2" style="font-size: 18px;">edit</span>
                     Editar
                 </button>
             </div>
-            <div class="card-body">
 
+            <div class="card-body">
                 <!-- Nombre de usuario -->
                 <div class="info-item p-3 mb-3">
                     <div class="d-flex align-items-center">
@@ -35,6 +35,8 @@
                     </div>
                 </div>
 
+                <hr class="my-3">
+
                 <!-- Correo -->
                 <div class="info-item p-3 mb-3">
                     <div class="d-flex align-items-center">
@@ -45,6 +47,8 @@
                         </div>
                     </div>
                 </div>
+
+                <hr class="my-3">
 
                 <!-- Nacimiento -->
                 <div class="info-item p-3">
