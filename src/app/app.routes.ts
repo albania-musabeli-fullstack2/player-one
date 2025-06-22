@@ -30,6 +30,10 @@ export const routes: Routes = [
             {
                 path: 'perfil-usuario',
                 loadComponent: () => import('./e-commerce/pages/perfil/perfil')
+            },
+            {
+                path: 'producto/:id',
+                loadComponent: () => import('./e-commerce/pages/producto/producto')
             }
         ]
     },

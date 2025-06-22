@@ -1,7 +1,9 @@
 <div class="card border-0 shadow card_hover" style="width: 18rem;">
     <img [src]="producto()?.urlImagen" class="card-img-top" alt="img_donkeykong1">
     <div class="card-body">
-        <span class="card-text">{{ producto()?.nombre }}</span>
+        <span class="card-text">
+            <a [routerLink]="['/producto', producto()?.id]" >{{ producto()?.nombre }}</a>
+        </span>
         <div class="mb-2">
             <span>$ {{ producto()?.precio }}</span>
         </div>
