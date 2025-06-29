@@ -7,6 +7,13 @@ import { Router, RouterModule } from '@angular/router';
 import { LocalStorageService } from '../../services/localStorage/local-storage-service';
 import { AlertService } from '../../services/alert/alert-service';
 
+
+/**
+ * @description
+ * Componente que gestiona el formulario de inicio de sesión del e-commerce.
+ * Permite a los usuarios autenticarse con su correo y contraseña, con validaciones de formato
+ * y manejo de alertas para errores. Redirige al usuario a la página de inicio tras un login exitoso.
+ */
 @Component({
   selector: 'app-login',
   imports: [
@@ -35,6 +42,13 @@ export default class Login {
   })
 
 
+  /**
+   * @description
+   * Procesa el envío del formulario de inicio de sesión.
+   * Valida las credenciales, busca al usuario en el local Storage, y redirige al inicio si es válido.
+   * Muestra alertas de error si las credenciales son inválidas o el usuario no existe.
+   * @returns {void}
+   */
   ingresar() {
     if (this.formLogin.invalid) {
       this.alertSrv.handlerAlerta('Advertencia', 'El correo y/o la contraseña no son válidos', 'warning')

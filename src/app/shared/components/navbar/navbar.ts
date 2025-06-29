@@ -5,6 +5,12 @@ import { RouterLink } from '@angular/router';
 import { LocalStorageService } from '../../../e-commerce/services/localStorage/local-storage-service';
 import { CarritoService } from '../../../e-commerce/services/carrito/carrito-service';
 
+
+/**
+ * @description
+ * Componente que representa la barra de navegación del e-commerce.
+ * Muestra links de navegación y refleja el estado del usuario autenticado y el carrito de compras.
+ */
 @Component({
   selector: 'e-commerce-navbar',
   imports: [

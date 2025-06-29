@@ -5,6 +5,13 @@ import { Subscription } from 'rxjs';
 import { Producto, ProductosService } from '../../services/productos/productos';
 import { CardProduct } from '../../components/card-product/card-product';
 
+
+
+/**
+ * @description
+ * Componente que muestra una lista de productos filtrados por categoría en el e-commerce.
+ * Utiliza el componente CardProduct para renderizar los productos y obtiene la categoría desde los parámetros de la ruta.
+ */
 @Component({
   selector: 'app-categoria-producto',
   imports: [
@@ -26,6 +33,12 @@ export default class CategoriaProducto implements OnInit, OnDestroy {
   private productosService = inject(ProductosService);
 
 
+  /**
+   * @description
+   * Inicializa el componente suscribiéndose a los parámetros de la ruta.
+   * Actualiza la señal nombreCategoria con el parámetro 'id' de la ruta y filtra los productos
+   * por la empresa correspondiente a la categoría.
+   */
   ngOnInit(): void {
     this.routeSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       this.nombreCategoria.set(params.get('id'))
@@ -35,12 +48,15 @@ export default class CategoriaProducto implements OnInit, OnDestroy {
     })
   }
 
+
+  /**
+   * @description
+   * Limpia la suscripción a los parámetros de la ruta al destruir el componente.
+   */
   ngOnDestroy(): void {
     if (this.routeSubscription) {
       this.routeSubscription?.unsubscribe();
     }
   }
-
-
 
 }

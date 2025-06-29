@@ -6,6 +6,13 @@ import { mayorDeEdadValidator } from '../../../shared/utils/nacimiento-validatio
 import { AlertService } from '../../services/alert/alert-service';
 import { LocalStorageService } from '../../services/localStorage/local-storage-service';
 
+
+
+/**
+ * @description
+ * Componente que gestiona el formulario de edición de perfil en un modal.
+ * Permite a los usuarios actualizar sus datos personales, con validaciones estrictas, y guarda los cambios en el localStorage.
+ */
 @Component({
   selector: 'app-editar-perfil',
   imports: [
@@ -26,6 +33,11 @@ export class EditarPerfil implements OnInit {
   public data = inject(MAT_DIALOG_DATA);
 
 
+  /**
+   * @description
+   * Inicializa el componente cargando los datos del usuario en el formulario.
+   * Aplica los valores del usuario inyectado a través de MAT_DIALOG_DATA al formulario.
+   */
   ngOnInit() {
     console.log(this.data)
     this.formPerfil.patchValue({
@@ -40,6 +52,11 @@ export class EditarPerfil implements OnInit {
   }
 
 
+  /**
+   * @description
+   * Formulario reactivo para editar los datos del perfil del usuario.
+   * Incluye los campos: nombre, usuario, correo, nacimiento, direccion y telefono con sus validaciones
+   */
   public formPerfil = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     usuario: ['', [Validators.required, Validators.minLength(3)]],
@@ -50,6 +67,13 @@ export class EditarPerfil implements OnInit {
   })
 
 
+  /**
+   * @description
+   * Procesa la actualización del perfil del usuario.
+   * Valida los campos del formulario, muestra alertas si hay errores, y actualiza el usuario en el localStorage
+   * si todas las validaciones son exitosas. Cierra el diálogo con un estado de éxito.
+   * @returns {void}
+   */
   actualizar() {
     const { nombre, usuario, correo, nacimiento, direccion, telefono } = this.formPerfil.value;
 

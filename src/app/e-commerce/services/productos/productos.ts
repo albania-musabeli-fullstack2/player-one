@@ -1,6 +1,10 @@
 import { computed, Injectable, signal } from '@angular/core';
 
 
+/**
+ * @description
+ * Interfaz que define la estructura de un producto en el e-commerce.
+ */
 export interface Producto {
   id: number;
   nombre: string;
@@ -14,12 +18,21 @@ export interface Producto {
 }
 
 
-
+/**
+ * @description
+ * Servicio para gestionar la lista de productos en el e-commerce.
+ * Proporciona una señal computada con una lista estática de productos predefinidos.
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
 
+  /**
+   * @description
+   * Señal que almacena la lista estática de productos disponibles.
+   * Inicializada con una lista predefinida de juegos y accesorios para varias consolas.
+   */
   private productos = signal<Producto[]>([
     {
       "id": 1,
@@ -166,10 +179,10 @@ export class ProductosService {
     },
   ])
 
-
+  /**
+   * @description
+   * Señal computada que proporciona la lista de productos disponibles.
+   */
   public listaProductos = computed(() => this.productos())
-
-
-
 
 }

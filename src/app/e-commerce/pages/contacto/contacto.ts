@@ -7,6 +7,13 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { AlertService } from '../../services/alert/alert-service';
 
 
+
+/**
+ * @description
+ * Componente que gestiona el formulario de contacto del e-commerce.
+ * Permite a los usuarios enviar un mensaje con su nombre, correo, teléfono y comentarios,
+ * con validaciones de formato y alertas personalizadas.
+ */
 @Component({
   selector: 'app-contacto',
   imports: [
@@ -26,14 +33,31 @@ export default class Contacto {
   private alertService = inject(AlertService);
 
 
+  /**
+   * @description
+   * Formulario reactivo para capturar los datos de contacto del usuario.
+   * Incluye los campos nombre, correo, teléfono y comentarios con validaciones específicas.
+   * - nombre: Requerido, debe tener al menos 2 caracteres.
+   * - correo: Debe seguir el formato de un email válido.
+   * - telefono: Debe ser un número de 9 dígitos.
+   * - comentarios: Opcional, sin validaciones estrictas.
+   * @type {FormGroup}
+   */
   public formContacto = this.fb.group({
-    nombre: [''],
+    nombre: ['', [Validators.required, Validators.minLength(2)]],
     correo: ['', [Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
     telefono: ['', [Validators.pattern(/^[0-9]{9}$/)]],
     comentarios: ['']
   })
 
 
+  /**
+   * @description
+   * Procesa el envío del formulario de contacto.
+   * Valida los campos nombre, correo, teléfono y comentarios, mostrando alertas si hay errores.
+   * Si todos los campos son válidos, muestra una alerta de éxito y reinicia el formulario.
+   * @returns {void}
+   */
   enviarContacto() {
     const {nombre,correo,telefono,comentarios} = this.formContacto.value;
 

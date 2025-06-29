@@ -9,6 +9,14 @@ import { passwordIgualesValidation } from '../../../shared/utils/password-valida
 import { mayorDeEdadValidator } from '../../../shared/utils/nacimiento-validation';
 import { LocalStorageService } from '../../services/localStorage/local-storage-service';
 
+
+
+/**
+ * @description
+ * Componente que gestiona el formulario de registro de nuevos usuarios en el e-commerce.
+ * Recibe la información del usuario, aplica validaciones y guarda los datos en el Local Storage.
+ * Redirige al usuario a la página de login si el registro es exitoso.
+ */
 @Component({
   selector: 'app-registro',
   imports: [
@@ -31,6 +39,20 @@ export default class Registro {
   private router = inject(Router);
 
 
+
+  /**
+   * @description
+   * Formulario reactivo para capturar los datos de registro del usuario.
+   * Incluye los siguientes campos con sus validaciones:
+   * - nombre: Requerido, entre 2 y 50 caracteres.
+   * - usuario: Requerido, mínimo 3 caracteres.
+   * - correo: Requerido, debe seguir el formato de un email válido.
+   * - pass1: Requerido, debe tener entre 8 y 20 caracteres, con al menos una letra minúscula, una mayúscula, un número y un carácter especial.
+   * - pass2: Requerido, debe coincidir con pass1 (validado por passwordIgualesValidation).
+   * - nacimiento: Requerido, el usuario debe ser mayor de 18 años (validado por mayorDeEdadValidator).
+   * - direccion: Requerido, mínimo 5 caracteres.
+   * - telefono: Requerido, debe ser un número de 9 dígitos.
+   */
   public formRegistro = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
     usuario: ['', [Validators.required, Validators.minLength(3)]],
@@ -47,6 +69,13 @@ export default class Registro {
   )
 
 
+  /**
+   * @description
+   * Procesa el envío del formulario de registro.
+   * Valida todos los campos del formulario, muestra alertas si hay errores, y guarda el usuario en el local Storage
+   * si todas las validaciones son exitosas. Redirige a la página de login tras un registro exitoso.
+   * @returns {void}
+   */
   nuevoUsuario() {
     console.log('Nuevo usuario', this.formRegistro.value)
     const { nombre, usuario, correo, pass1, pass2, nacimiento, direccion, telefono } = this.formRegistro.value;
@@ -114,6 +143,13 @@ export default class Registro {
     this.router.navigate(['/login']);
   }
 
+
+  /**
+   * @description
+   * Reinicia el formulario de registro a su estado inicial.
+   * Limpia todos los campos y restablece las validaciones.
+   * @returns {void}
+   */
   limpiarFormulario() {
     this.formRegistro.reset();
   }

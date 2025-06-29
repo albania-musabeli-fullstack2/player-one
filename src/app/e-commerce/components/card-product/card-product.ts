@@ -7,6 +7,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { CarritoService } from '../../services/carrito/carrito-service';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
+
+
+/**
+ * @description
+ * Componente que muestra un card de producto en el e-commerce.
+ * Presenta los detalles de un producto (como nombre, precio, imagen, etc.) y permite añadirlo al carrito de compras.
+ */
 @Component({
   selector: 'card-product',
   imports: [
@@ -25,6 +32,12 @@ export class CardProduct {
   public carritoSrv = inject(CarritoService);
 
 
+  /**
+   * @description
+   * Añade el producto mostrado al carrito de compras.
+   * Llama al método agregarProducto del servicio CarritoService.
+   * @returns {void}
+   */
   agregarAlCarrito(){
     this.carritoSrv.agregarProducto(this.producto()!);
   }

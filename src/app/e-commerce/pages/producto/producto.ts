@@ -6,6 +6,13 @@ import { Producto as ProductoI } from '../../interfaces/producto.interface';
 import { CarritoService } from '../../services/carrito/carrito-service';
 import { SeparadorMilesPipe } from '../../../shared/pipes/separador-miles-pipe';
 
+
+
+/**
+ * @description
+ * Componente que muestra los detalles de un producto específico en el e-commerce.
+ * Obtiene el producto basado en el ID proporcionado en la ruta y permite añadirlo al carrito
+ */
 @Component({
   selector: 'app-producto',
   imports: [
@@ -25,7 +32,12 @@ export default class Producto implements OnInit {
   private productoService = inject(ProductosService);
   private carritoSrv = inject(CarritoService);
 
-
+  /**
+   * @description
+   * Inicializa el componente suscribiéndose a los parámetros de la ruta.
+   * Actualiza la señal productoId con el parámetro 'id' de la ruta y busca el producto correspondiente
+   * en la lista de productos del servicio ProductosService.
+   */
   ngOnInit() {
     this.routeSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       this.productoId.set(params.get('id'));
@@ -43,11 +55,14 @@ export default class Producto implements OnInit {
   }
 
 
+  /**
+   * @description
+   * Añade el producto actual al carrito de compras.
+   * Llama al método agregarProducto del servicio CarritoService con el producto almacenado en la señal producto.
+   * @returns {void}
+   */
   agregarAlCarrito() {
     this.carritoSrv.agregarProducto(this.producto()!)
   }
-
-  
-
 
 }
