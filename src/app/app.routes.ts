@@ -34,6 +34,10 @@ export const routes: Routes = [
             {
                 path: 'producto/:id',
                 loadComponent: () => import('./e-commerce/pages/producto/producto')
+            },
+            {
+                path: 'carrito-compras',
+                loadComponent: () => import('./e-commerce/pages/carrito-compras/carrito-compras')
             }
         ]
     },

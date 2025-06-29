@@ -3,6 +3,7 @@ import { Component, computed, inject, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { LocalStorageService } from '../../../e-commerce/services/localStorage/local-storage-service';
+import { CarritoService } from '../../../e-commerce/services/carrito/carrito-service';
 
 @Component({
   selector: 'e-commerce-navbar',
@@ -17,6 +18,8 @@ import { LocalStorageService } from '../../../e-commerce/services/localStorage/l
 export class Navbar implements OnInit {
 
   private localStoSrv = inject(LocalStorageService);
+  public carritoSrv = inject(CarritoService);
+  
   public usuario = computed(()=> this.localStoSrv.usuarioLogin());
 
   ngOnInit() {}

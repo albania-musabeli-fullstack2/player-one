@@ -8,13 +8,11 @@ export class AlertService {
 
   constructor() { }
 
-  handlerAlerta(title:string, text:string, icon:SweetAlertIcon){
+  handlerAlerta(title: string, text: string, icon: SweetAlertIcon) {
     Swal.fire({
       title: title,
       text: text,
       icon: icon
     });
   }
-
-  
 }

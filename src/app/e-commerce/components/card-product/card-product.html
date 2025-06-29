@@ -5,7 +5,7 @@
             <a [routerLink]="['/producto', producto()?.id]" >{{ producto()?.nombre }}</a>
         </span>
         <div class="mb-2">
-            <span>$ {{ producto()?.precio }}</span>
+            <span>$ {{ producto()?.precio | separadorMiles:0 }}</span>
         </div>
         <span class="badge rounded-pill text-bg-primary me-2">{{ producto()?.consola }}</span>
         <span class="badge rounded-pill text-bg-success">{{ producto()?.categoriaJuego }}</span>

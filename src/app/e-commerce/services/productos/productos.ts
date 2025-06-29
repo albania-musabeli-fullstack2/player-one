@@ -10,6 +10,7 @@ export interface Producto {
   categoriaJuego: string;
   urlImagen: string;
   precio: number;
+  stock: number;
 }
 
 
@@ -28,7 +29,8 @@ export class ProductosService {
       "categoriaProducto":"juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fsupermarioallstars.jpg?alt=media&token=bffdebf1-c8ea-4f55-ac43-ddc2996ef512",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 5
     },
     {
       "id": 2,
@@ -38,7 +40,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fdonkeykong1.jpg?alt=media&token=6c4c7817-9a47-4979-a595-b64f6cc0cf3b",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 4
+
     },
     {
       "id": 3,
@@ -48,7 +52,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fdonkeykong2.jpg?alt=media&token=535ab1fc-73b6-4cb9-afde-350b625c1920",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 10
+
     },
     {
       "id": 4,
@@ -58,7 +64,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "acción",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fg-darius-playstation.jpg?alt=media&token=cb960c5f-5bd4-4945-8d97-759fa761e0d8",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 8
+
     },
     {
       "id": 5,
@@ -68,7 +76,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "RPG",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Ffinal-fantasy-vii-playstation.jpg?alt=media&token=e0e81a44-1feb-4c8a-8517-5c37a08b4b8d",
-      "precio": 40000
+      "precio": 40000,
+      "stock": 4
+
     },
     {
       "id": 6,
@@ -78,7 +88,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "acción",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fmetal-gear-solid-playstation.jpg?alt=media&token=ecc962ff-bdbf-4f11-bc2c-f15e752e2baa",
-      "precio": 40000
+      "precio": 40000,
+      "stock": 5
+
     },
     {
       "id": 7,
@@ -88,7 +100,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fsonic-the-hedgehog-2.jpg?alt=media&token=7fec3aab-c7c8-4e3c-9474-ef594656fd5c",
-      "precio": 30000
+      "precio": 30000,
+      "stock": 2
+
     },
     {
       "id": 8,
@@ -98,7 +112,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fsonic-the-hedgehog-3.jpg?alt=media&token=c872ce02-81f3-4164-94c3-1c199b9db3e7",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 6
+
     },
     {
       "id": 9,
@@ -108,7 +124,9 @@ export class ProductosService {
       "categoriaProducto": "juego",
       "categoriaJuego": "plataformas",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fstreets-of-rage-sega.jpg?alt=media&token=c0f8bdd3-114e-42b9-ad43-0029a8022182",
-      "precio": 25000
+      "precio": 25000,
+      "stock": 3
+
     },
     {
       "id": 10,
@@ -118,7 +136,9 @@ export class ProductosService {
       "categoriaProducto": "accesorio",
       "categoriaJuego": "accesorio",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fjoystick-N64-clear-blue.jpg?alt=media&token=9d988b35-91ab-4421-93cc-49453f3f23d6",
-      "precio": 70000
+      "precio": 70000,
+      "stock": 7
+
     },
      {
       "id": 11,
@@ -128,7 +148,9 @@ export class ProductosService {
       "categoriaProducto": "accesorio",
       "categoriaJuego": "accesorio",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fjoystick-n64-pikachu_redim.jpg?alt=media&token=686a5eef-f632-4b90-8f34-cc45463b0f1b",
-      "precio": 50000
+      "precio": 50000,
+      "stock": 8
+
     },
      {
       "id": 12,
@@ -138,7 +160,9 @@ export class ProductosService {
       "categoriaProducto": "accesorio",
       "categoriaJuego": "accesorio",
       "urlImagen": "https://firebasestorage.googleapis.com/v0/b/ty-web-90658.appspot.com/o/player-one%2Fjoystick_playstation_.jpg?alt=media&token=6a6a8734-64a8-4017-9c1b-c9896bffc33d",
-      "precio": 22000
+      "precio": 22000,
+      "stock": 10
+
     },
   ])
 

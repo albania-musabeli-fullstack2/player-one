@@ -1,0 +1,125 @@
+<section class="mt-5" data-bs-theme="light">
+    <h1 class="animate__animated animate__fadeInLeft">Mi Carrito</h1>
+    <hr class="border-2">
+
+    <div class="container px-4 px-lg-0">
+        <div class="row g-4">
+            <div class="col-lg-8 my-4">
+                <div class="row row-cols-1 g-4">
+
+                    <!-- PRODUCTOS -->
+                    @for (producto of carritoSrv.productosCarrito(); track producto.id) {
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-3 col-md-2 order-md-1">
+                                        <a href="#">
+                                            <img class="img-fluid" style="max-width: 100px;" [src]="producto.urlImagen"
+                                                alt="imac image" />
+                                        </a>
+                                    </div>
+                                    <div class="col-9 col-md-5 order-md-2">
+                                        <a [routerLink]="['/producto', producto.id]"
+                                            class="text-decoration-none text-dark fw-medium">{{ producto.nombre }}</a>
+                                        <div class="d-flex gap-3 mt-2">
+                                            <!-- Botón para eliminar el producto -->
+                                            <button type="button"
+                                                class="btn btn-link text-danger p-0 d-flex align-items-center"
+                                                (click)="eliminarProducto(producto.id)">
+                                                <svg class="me-1" width="20" height="20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2"
+                                                        d="M6 18 17.94 6M18 18 6.06 6" />
+                                                </svg>
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-5 order-md-3 text-end">
+                                        <div
+                                            class="d-flex align-items-center justify-content-between justify-content-md-end gap-3">
+                                            <div class="input-group input-group-sm" style="width: 100px;">
+                                                <!-- Botón para disminuir cantidad -->
+                                                <button type="button" id="decrement-button"
+                                                    data-input-counter-decrement="counter-input"
+                                                    class="btn btn-outline-secondary"
+                                                    (click)="disminuirCantidad(producto.id)">
+                                                    <svg width="16" height="16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 2">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                                    </svg>
+                                                </button>
+                                                <input type="text" class="form-control text-center"
+                                                    [value]="producto.cantidad" readonly />
+                                                <!-- Botón para aumentar cantidad -->
+                                                <button type="button" id="increment-button"
+                                                    data-input-counter-increment="counter-input"
+                                                    class="btn btn-outline-secondary"
+                                                    (click)="aumentarCantidad(producto.id)">
+                                                    <svg width="16" height="16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="M9 1v16M1 9h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <!-- Cálculo del precio del producto -->
+                                            <p class="fw-bold mb-0">${{ (producto.precio * producto.cantidad) |
+                                                separadorMiles:0 }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    @empty {
+                    <div class="col">
+                        <p class="text-muted">El carrito está vacío.</p>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- RESUMEN DE PRECIOS -->
+            <div class="col-lg-4 my-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-bold mb-4">Resumen</h3>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Subtotal</span>
+                                <span>${{ carritoSrv.totalPrecio() | separadorMiles:0 }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Envío</span>
+                                <span>${{precioEnvio() | separadorMiles:0}}</span>
+                            </div>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total</span>
+                                <span>${{ carritoSrv.totalPrecio() + precioEnvio() | separadorMiles:0 }}</span>
+                            </div>
+                        </div>
+                        <a (click)="pagar()" class="btn btn-primary w-100 mb-2">Pagar</a>
+                        <div class="d-flex justify-content-center align-items-center gap-2">
+                            <span class="text-muted small">o</span>
+                            <a [routerLink]="['/']" class="btn btn-link text-primary p-0 d-flex align-items-center">
+                                Continuar Comprando
+                                <svg class="ms-1" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { Producto, ProductosService } from '../../services/productos';
+import { Producto, ProductosService } from '../../services/productos/productos';
 import { CardProduct } from '../../components/card-product/card-product';
 
 @Component({

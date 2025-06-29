@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Inject, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Producto, ProductosService } from '../../services/productos';
+import { Producto, ProductosService } from '../../services/productos/productos';
 import { CardProduct } from '../../components/card-product/card-product';
 
 @Component({

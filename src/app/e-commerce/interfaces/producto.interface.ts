@@ -7,5 +7,9 @@ export interface Producto {
     categoriaJuego: string;
     urlImagen: string;
     precio: number;
-    stock?: number;
+    stock: number;
+}
+
+export interface ProductoCarrito extends Producto {
+    cantidad: number;
 }
