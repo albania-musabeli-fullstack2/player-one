@@ -1,5 +1,11 @@
+@use '@angular/material' as mat;
+
 /* Variables */
 :root {
+    @include mat.tooltip-overrides((
+    container-color: #7430f9,
+  ));
+
     --color-navbar: #7430f9;
     --color-borde: #7430f9;
     --color-boton-hover: #5e26c7;

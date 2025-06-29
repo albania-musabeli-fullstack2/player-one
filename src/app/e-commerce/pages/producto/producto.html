@@ -23,7 +23,7 @@
                         <div>
                             <small class="text-muted d-block">Precio</small>
                             <div class="mt-1">
-                                <div class="fw-medium">{{ producto()?.precio }}</div>
+                                <div class="fw-medium">{{ producto()?.precio | separadorMiles:0 }}</div>
                             </div>
                         </div>
                     </div>

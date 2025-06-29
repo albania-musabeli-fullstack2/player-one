@@ -4,11 +4,13 @@ import { Subscription } from 'rxjs';
 import { ProductosService } from '../../services/productos/productos';
 import { Producto as ProductoI } from '../../interfaces/producto.interface';
 import { CarritoService } from '../../services/carrito/carrito-service';
+import { SeparadorMilesPipe } from '../../../shared/pipes/separador-miles-pipe';
 
 @Component({
   selector: 'app-producto',
   imports: [
     RouterModule,
+    SeparadorMilesPipe,
   ],
   templateUrl: './producto.html',
   styleUrl: './producto.scss'

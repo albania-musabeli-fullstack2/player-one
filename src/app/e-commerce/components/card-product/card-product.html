@@ -1,8 +1,16 @@
 <div class="card border-0 shadow card_hover" style="width: 18rem;">
     <img [src]="producto()?.urlImagen" class="card-img-top" alt="img_donkeykong1">
-    <div class="card-body">
+    <div class="card-body ">
         <span class="card-text">
-            <a [routerLink]="['/producto', producto()?.id]" >{{ producto()?.nombre }}</a>
+            <div class="d-flex justify-content-between align-items-center">
+                <a [routerLink]="['/producto', producto()?.id]">{{ producto()?.nombre }}</a>
+                <button (click)="agregarAlCarrito()"
+                        class="float-end" matIconButton
+                        matTooltip="Agregar al carrito">
+                    <mat-icon style="color: #7430f9">add_shopping_cart</mat-icon>
+                </button>
+            </div>
+
         </span>
         <div class="mb-2">
             <span>$ {{ producto()?.precio | separadorMiles:0 }}</span>
