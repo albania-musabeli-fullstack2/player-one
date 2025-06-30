@@ -23,6 +23,7 @@ E-commerce desarrollado con Angular versión 20.0.1 el cual contiene las siguien
 ## Dependencias de Desarrollo
 
 * Compodoc
+* karma-chrome-launcher karma-firefox-launcher
 
 
 ## Iniciar proyecto en modo desarrollo
@@ -48,4 +49,19 @@ npm run compodoc
 2. Iniciar servidor para ver la documentación
 ```bash
 npm run compodoc:server
+```
+
+
+## Pruebas Unitarias
+
+Se realizaron pruebas unitarias a los siguientes componentes:
+
+* Contacto Component
+* Producto Service
+* Local Storage Service
+
+
+1. Ejecutar las pruebas
+```bash
+npm run test
 ```
