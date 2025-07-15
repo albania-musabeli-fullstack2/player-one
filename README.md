@@ -65,3 +65,26 @@ Se realizaron pruebas unitarias a los siguientes componentes:
 ```bash
 npm run test
 ```
+
+## Nuevos requerimientos
+
+* Cargar los productos desde un JSON alojado en Github pages llamandolo desde una petición http GET
+* Agregar módulo de panel administrativo para CRUD de usuarios
+* Agregar archivo de configuración de Docker (dockerfile, dockerignore) para crear imagen de nginx para levantar servidor web con la aplicación de Angular
+
+## Servidor con Docker
+
+* Crear imagen de servidor nginx
+```bash
+docker build -t player-one .
+```
+
+* Crear contenedor
+```bash
+docker run -d -p 8080:80 --name angular-prod player-one
+```
+
+* Ver sitio web dockerizado de forma local
+```url
+http://localhost:8080/
+```
