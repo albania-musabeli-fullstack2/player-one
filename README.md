@@ -69,6 +69,9 @@ npm run test
 ## Nuevos requerimientos
 
 * Cargar los productos desde un JSON alojado en Github pages llamandolo desde una petición http GET
+```
+https://albania-musabeli-fullstack2.github.io/player-one-api/db.json
+```
 * Agregar módulo de panel administrativo para CRUD de usuarios
 * Agregar archivo de configuración de Docker (dockerfile, dockerignore) para crear imagen de nginx para levantar servidor web con la aplicación de Angular
 
