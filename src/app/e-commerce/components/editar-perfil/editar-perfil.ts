@@ -44,7 +44,7 @@ export class EditarPerfil implements OnInit {
       nombre: this.data.usuario.nombre,
       usuario: this.data.usuario.usuario,
       correo: this.data.usuario.correo,
-      nacimiento: (this.data.usuario.fechaNacimiento),
+      nacimiento: this.data.usuario.fechaNacimiento,
       direccion: this.data.usuario.direccion,
       telefono: this.data.usuario.telefono
     })
@@ -113,6 +113,7 @@ export class EditarPerfil implements OnInit {
 
 
     const usuarioActualizado = {
+      id: this.data.usuario.id,
       nombre,
       usuario,
       correo,

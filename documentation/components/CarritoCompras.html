@@ -1,0 +1,1080 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>player-one documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">player-one documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CarritoCompras</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/e-commerce/pages/carrito-compras/carrito-compras.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que gestiona el carrito de compras del e-commerce.
+Muestra los productos añadidos al carrito, permite modificar cantidades, eliminar productos y simula el pago.
+Redirige a la página de inicio tras una simulación de compra exitosa.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-carrito-compras</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>RouterLink</code>
+                            <code>SeparadorMilesPipe</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./carrito-compras.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./carrito-compras.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#alertSrv" >alertSrv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#carritoSrv" >carritoSrv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#precioEnvio" >precioEnvio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aumentarCantidadProducto" >aumentarCantidadProducto</a>
+                            </li>
+                            <li>
+                                <a href="#disminuirCantidadProducto" >disminuirCantidadProducto</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarProducto" >eliminarProducto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#handlerAlertaConfirm" >handlerAlertaConfirm</a>
+                            </li>
+                            <li>
+                                <a href="#pagar" >pagar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aumentarCantidadProducto"></a>
+                    <span class="name">
+                        <span ><b>aumentarCantidadProducto</b></span>
+                        <a href="#aumentarCantidadProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aumentarCantidadProducto(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Incrementa la cantidad de un producto en el carrito.
+Llama al método aumentarCantidadProducto del servicio CarritoService.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador único del producto.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disminuirCantidadProducto"></a>
+                    <span class="name">
+                        <span ><b>disminuirCantidadProducto</b></span>
+                        <a href="#disminuirCantidadProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disminuirCantidadProducto(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Reduce la cantidad de un producto en el carrito.
+Llama al método disminuirCantidadProducto del servicio CarritoService.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador único del producto.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarProducto"></a>
+                    <span class="name">
+                        <span ><b>eliminarProducto</b></span>
+                        <a href="#eliminarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarProducto(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un producto del carrito.
+Llama al método eliminarProducto del servicio CarritoService.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador único del producto.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handlerAlertaConfirm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>handlerAlertaConfirm</b></span>
+                        <a href="#handlerAlertaConfirm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handlerAlertaConfirm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra una alerta de confirmación para finalizar la compra.
+Si se confirma, vacía el carrito y redirige a la página de inicio.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pagar"></a>
+                    <span class="name">
+                        <span ><b>pagar</b></span>
+                        <a href="#pagar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pagar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicia el proceso de pago, si el carrito no está vacío, muestra una alerta de confirmación.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertSrv"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>alertSrv</b></span>
+                        <a href="#alertSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AlertService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carritoSrv"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>carritoSrv</b></span>
+                        <a href="#carritoSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CarritoService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="precioEnvio"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>precioEnvio</b></span>
+                        <a href="#precioEnvio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; {
+    if (this.carritoSrv.productosCarrito().length &#x3D;&#x3D;&#x3D; 0) {
+      return 0;
+    }
+    else {
+      return 5000;
+    }
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/e-commerce/pages/carrito-compras/carrito-compras.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { CarritoService } from &#x27;../../services/carrito/carrito-service&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Route, Router, RouterLink } from &#x27;@angular/router&#x27;;
+import { SeparadorMilesPipe } from &#x27;../../../shared/pipes/separador-miles-pipe&#x27;;
+import { AlertService } from &#x27;../../services/alert/alert-service&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+
+
+/**
+ * @description
+ * Componente que gestiona el carrito de compras del e-commerce.
+ * Muestra los productos añadidos al carrito, permite modificar cantidades, eliminar productos y simula el pago.
+ * Redirige a la página de inicio tras una simulación de compra exitosa.
+ */
+@Component({
+  selector: &#x27;app-carrito-compras&#x27;,
+  imports: [
+    CommonModule,
+    RouterLink,
+    SeparadorMilesPipe,
+  ],
+  templateUrl: &#x27;./carrito-compras.html&#x27;,
+  styleUrl: &#x27;./carrito-compras.scss&#x27;
+})
+export default class CarritoCompras {
+
+  // Inyección dependencias
+  public carritoSrv &#x3D; inject(CarritoService);
+  public alertSrv &#x3D; inject(AlertService);
+  public router &#x3D; inject(Router);
+
+  public precioEnvio &#x3D; computed(() &#x3D;&gt; {
+    if (this.carritoSrv.productosCarrito().length &#x3D;&#x3D;&#x3D; 0) {
+      return 0;
+    }
+    else {
+      return 5000;
+    }
+  })
+
+
+  /**
+   * @description
+   * Incrementa la cantidad de un producto en el carrito.
+   * Llama al método aumentarCantidadProducto del servicio CarritoService.
+   * @param id - Identificador único del producto.
+   * @returns {void}
+   */
+  aumentarCantidadProducto(id: number){
+    this.carritoSrv.aumentarCantidadProducto(id);
+  }
+
+
+  /**
+   * @description
+   * Reduce la cantidad de un producto en el carrito.
+   * Llama al método disminuirCantidadProducto del servicio CarritoService.
+   * @param id - Identificador único del producto.
+   * @returns {void}
+   */
+  disminuirCantidadProducto(id: number){
+    this.carritoSrv.disminuirCantidadProducto(id);
+  }
+
+
+  /**
+   * @description
+   * Elimina un producto del carrito.
+   * Llama al método eliminarProducto del servicio CarritoService.
+   * @param id - Identificador único del producto.
+   * @returns {void}
+   */
+  eliminarProducto(id: number){
+    this.carritoSrv.eliminarProducto(id);
+  }
+
+
+  /**
+   * @description
+   * Inicia el proceso de pago, si el carrito no está vacío, muestra una alerta de confirmación.
+   * @returns {void}
+   */
+  pagar(){
+    if (this.carritoSrv.productosCarrito().length &#x3D;&#x3D;&#x3D; 0) {
+      return;
+    }
+
+    this.handlerAlertaConfirm();
+  }
+
+
+  /**
+   * @description
+   * Muestra una alerta de confirmación para finalizar la compra.
+   * Si se confirma, vacía el carrito y redirige a la página de inicio.
+   * @returns {void}
+   */
+  public handlerAlertaConfirm() {
+    Swal.fire({
+      title: &quot;Compra exitosa&quot;,
+      //showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: &quot;Confirmar&quot;,
+      cancelButtonText: &quot;Cancelar&quot;
+      //denyButtonText: &#x60;Don&#x27;t save&#x60;
+    }).then((result) &#x3D;&gt; {
+      if (result.isConfirmed) {
+        this.carritoSrv.vaciarCarrito();
+
+        this.router.navigate([&#x27;/&#x27;]);
+      }
+      else if (result.isDenied) {
+        Swal.fire(&quot;Changes are not saved&quot;, &quot;&quot;, &quot;info&quot;);
+      }
+    });
+  }
+  
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;mt-5&quot; data-bs-theme&#x3D;&quot;light&quot;&gt;
+    &lt;h1 class&#x3D;&quot;animate__animated animate__fadeInLeft&quot;&gt;Mi Carrito&lt;/h1&gt;
+    &lt;hr class&#x3D;&quot;border-2&quot;&gt;
+
+    &lt;div class&#x3D;&quot;container px-4 px-lg-0&quot;&gt;
+        &lt;div class&#x3D;&quot;row g-4&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-8 my-4&quot;&gt;
+                &lt;div class&#x3D;&quot;row row-cols-1 g-4&quot;&gt;
+
+                    &lt;!-- PRODUCTOS --&gt;
+                    @for (producto of carritoSrv.productosCarrito(); track producto.id) {
+                    &lt;div class&#x3D;&quot;col&quot;&gt;
+                        &lt;div class&#x3D;&quot;card shadow-sm&quot;&gt;
+                            &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                                &lt;div class&#x3D;&quot;row align-items-center g-4&quot;&gt;
+                                    &lt;div class&#x3D;&quot;col-3 col-md-2 order-md-1&quot;&gt;
+                                        &lt;a href&#x3D;&quot;#&quot;&gt;
+                                            &lt;img class&#x3D;&quot;img-fluid&quot; style&#x3D;&quot;max-width: 100px;&quot; [src]&#x3D;&quot;producto.urlImagen&quot;
+                                                alt&#x3D;&quot;imac image&quot; /&gt;
+                                        &lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;col-9 col-md-5 order-md-2&quot;&gt;
+                                        &lt;a [routerLink]&#x3D;&quot;[&#x27;/producto&#x27;, producto.id]&quot;
+                                            class&#x3D;&quot;text-decoration-none text-dark fw-medium&quot;&gt;{{ producto.nombre }}&lt;/a&gt;
+                                        &lt;div class&#x3D;&quot;d-flex gap-3 mt-2&quot;&gt;
+                                            &lt;!-- Botón para eliminar el producto --&gt;
+                                            &lt;button type&#x3D;&quot;button&quot;
+                                                class&#x3D;&quot;btn btn-link text-danger p-0 d-flex align-items-center&quot;
+                                                (click)&#x3D;&quot;eliminarProducto(producto.id)&quot;&gt;
+                                                &lt;svg class&#x3D;&quot;me-1&quot; width&#x3D;&quot;20&quot; height&#x3D;&quot;20&quot; fill&#x3D;&quot;none&quot;
+                                                    xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
+                                                    &lt;path stroke&#x3D;&quot;currentColor&quot; stroke-linecap&#x3D;&quot;round&quot;
+                                                        stroke-linejoin&#x3D;&quot;round&quot; stroke-width&#x3D;&quot;2&quot;
+                                                        d&#x3D;&quot;M6 18 17.94 6M18 18 6.06 6&quot; /&gt;
+                                                &lt;/svg&gt;
+                                                Eliminar
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;col-12 col-md-5 order-md-3 text-end&quot;&gt;
+                                        &lt;div
+                                            class&#x3D;&quot;d-flex align-items-center justify-content-between justify-content-md-end gap-3&quot;&gt;
+                                            &lt;div class&#x3D;&quot;input-group input-group-sm&quot; style&#x3D;&quot;width: 100px;&quot;&gt;
+                                                &lt;!-- Botón para disminuir cantidad --&gt;
+                                                &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;decrement-button&quot;
+                                                    data-input-counter-decrement&#x3D;&quot;counter-input&quot;
+                                                    class&#x3D;&quot;btn btn-outline-secondary&quot;
+                                                    (click)&#x3D;&quot;disminuirCantidadProducto(producto.id)&quot;&gt;
+                                                    &lt;svg width&#x3D;&quot;16&quot; height&#x3D;&quot;16&quot; fill&#x3D;&quot;none&quot;
+                                                        xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 18 2&quot;&gt;
+                                                        &lt;path stroke&#x3D;&quot;currentColor&quot; stroke-linecap&#x3D;&quot;round&quot;
+                                                            stroke-linejoin&#x3D;&quot;round&quot; stroke-width&#x3D;&quot;2&quot; d&#x3D;&quot;M1 1h16&quot; /&gt;
+                                                    &lt;/svg&gt;
+                                                &lt;/button&gt;
+                                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control text-center&quot;
+                                                    [value]&#x3D;&quot;producto.cantidad&quot; readonly /&gt;
+                                                &lt;!-- Botón para aumentar cantidad --&gt;
+                                                &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;increment-button&quot;
+                                                    data-input-counter-increment&#x3D;&quot;counter-input&quot;
+                                                    class&#x3D;&quot;btn btn-outline-secondary&quot;
+                                                    (click)&#x3D;&quot;aumentarCantidadProducto(producto.id)&quot;&gt;
+                                                    &lt;svg width&#x3D;&quot;16&quot; height&#x3D;&quot;16&quot; fill&#x3D;&quot;none&quot;
+                                                        xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 18 18&quot;&gt;
+                                                        &lt;path stroke&#x3D;&quot;currentColor&quot; stroke-linecap&#x3D;&quot;round&quot;
+                                                            stroke-linejoin&#x3D;&quot;round&quot; stroke-width&#x3D;&quot;2&quot;
+                                                            d&#x3D;&quot;M9 1v16M1 9h16&quot; /&gt;
+                                                    &lt;/svg&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- Cálculo del precio del producto --&gt;
+                                            &lt;p class&#x3D;&quot;fw-bold mb-0&quot;&gt;${{ (producto.precio * producto.cantidad) |
+                                                separadorMiles:0 }}&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    }
+                    @empty {
+                    &lt;div class&#x3D;&quot;col&quot;&gt;
+                        &lt;p class&#x3D;&quot;text-muted&quot;&gt;El carrito está vacío.&lt;/p&gt;
+                    &lt;/div&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- RESUMEN DE PRECIOS --&gt;
+            &lt;div class&#x3D;&quot;col-lg-4 my-4&quot;&gt;
+                &lt;div class&#x3D;&quot;card shadow-sm mb-4&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                        &lt;h3 class&#x3D;&quot;h5 fw-bold mb-4&quot;&gt;Resumen&lt;/h3&gt;
+                        &lt;div class&#x3D;&quot;mb-4&quot;&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-between mb-2&quot;&gt;
+                                &lt;span class&#x3D;&quot;text-muted&quot;&gt;Subtotal&lt;/span&gt;
+                                &lt;span&gt;${{ carritoSrv.totalPrecio() | separadorMiles:0 }}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-between mb-2&quot;&gt;
+                                &lt;span class&#x3D;&quot;text-muted&quot;&gt;Envío&lt;/span&gt;
+                                &lt;span&gt;${{precioEnvio() | separadorMiles:0}}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;hr class&#x3D;&quot;my-2&quot;&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-between fw-bold&quot;&gt;
+                                &lt;span&gt;Total&lt;/span&gt;
+                                &lt;span&gt;${{ carritoSrv.totalPrecio() + precioEnvio() | separadorMiles:0 }}&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;a (click)&#x3D;&quot;pagar()&quot; class&#x3D;&quot;btn btn-primary w-100 mb-2&quot;&gt;Pagar&lt;/a&gt;
+                        &lt;div class&#x3D;&quot;d-flex justify-content-center align-items-center gap-2&quot;&gt;
+                            &lt;span class&#x3D;&quot;text-muted small&quot;&gt;o&lt;/span&gt;
+                            &lt;a [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; class&#x3D;&quot;btn btn-link text-primary p-0 d-flex align-items-center&quot;&gt;
+                                Continuar Comprando
+                                &lt;svg class&#x3D;&quot;ms-1&quot; width&#x3D;&quot;20&quot; height&#x3D;&quot;20&quot; fill&#x3D;&quot;none&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+                                    viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
+                                    &lt;path stroke&#x3D;&quot;currentColor&quot; stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot;
+                                        stroke-width&#x3D;&quot;2&quot; d&#x3D;&quot;M19 12H5m14 0-4 4m4-4-4-4&quot; /&gt;
+                                &lt;/svg&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="mt-5" data-bs-theme="light">    <h1 class="animate__animated animate__fadeInLeft">Mi Carrito</h1>    <hr class="border-2">    <div class="container px-4 px-lg-0">        <div class="row g-4">            <div class="col-lg-8 my-4">                <div class="row row-cols-1 g-4">                    <!-- PRODUCTOS -->                    @for (producto of carritoSrv.productosCarrito(); track producto.id) {                    <div class="col">                        <div class="card shadow-sm">                            <div class="card-body p-4">                                <div class="row align-items-center g-4">                                    <div class="col-3 col-md-2 order-md-1">                                        <a href="#">                                            <img class="img-fluid" style="max-width: 100px;" [src]="producto.urlImagen"                                                alt="imac image" />                                        </a>                                    </div>                                    <div class="col-9 col-md-5 order-md-2">                                        <a [routerLink]="[\'/producto\', producto.id]"                                            class="text-decoration-none text-dark fw-medium">{{ producto.nombre }}</a>                                        <div class="d-flex gap-3 mt-2">                                            <!-- Botón para eliminar el producto -->                                            <button type="button"                                                class="btn btn-link text-danger p-0 d-flex align-items-center"                                                (click)="eliminarProducto(producto.id)">                                                <svg class="me-1" width="20" height="20" fill="none"                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">                                                    <path stroke="currentColor" stroke-linecap="round"                                                        stroke-linejoin="round" stroke-width="2"                                                        d="M6 18 17.94 6M18 18 6.06 6" />                                                </svg>                                                Eliminar                                            </button>                                        </div>                                    </div>                                    <div class="col-12 col-md-5 order-md-3 text-end">                                        <div                                            class="d-flex align-items-center justify-content-between justify-content-md-end gap-3">                                            <div class="input-group input-group-sm" style="width: 100px;">                                                <!-- Botón para disminuir cantidad -->                                                <button type="button" id="decrement-button"                                                    data-input-counter-decrement="counter-input"                                                    class="btn btn-outline-secondary"                                                    (click)="disminuirCantidadProducto(producto.id)">                                                    <svg width="16" height="16" fill="none"                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 2">                                                        <path stroke="currentColor" stroke-linecap="round"                                                            stroke-linejoin="round" stroke-width="2" d="M1 1h16" />                                                    </svg>                                                </button>                                                <input type="text" class="form-control text-center"                                                    [value]="producto.cantidad" readonly />                                                <!-- Botón para aumentar cantidad -->                                                <button type="button" id="increment-button"                                                    data-input-counter-increment="counter-input"                                                    class="btn btn-outline-secondary"                                                    (click)="aumentarCantidadProducto(producto.id)">                                                    <svg width="16" height="16" fill="none"                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">                                                        <path stroke="currentColor" stroke-linecap="round"                                                            stroke-linejoin="round" stroke-width="2"                                                            d="M9 1v16M1 9h16" />                                                    </svg>                                                </button>                                            </div>                                            <!-- Cálculo del precio del producto -->                                            <p class="fw-bold mb-0">${{ (producto.precio * producto.cantidad) |                                                separadorMiles:0 }}</p>                                        </div>                                    </div>                                </div>                            </div>                        </div>                    </div>                    }                    @empty {                    <div class="col">                        <p class="text-muted">El carrito está vacío.</p>                    </div>                    }                </div>            </div>            <!-- RESUMEN DE PRECIOS -->            <div class="col-lg-4 my-4">                <div class="card shadow-sm mb-4">                    <div class="card-body p-4">                        <h3 class="h5 fw-bold mb-4">Resumen</h3>                        <div class="mb-4">                            <div class="d-flex justify-content-between mb-2">                                <span class="text-muted">Subtotal</span>                                <span>${{ carritoSrv.totalPrecio() | separadorMiles:0 }}</span>                            </div>                            <div class="d-flex justify-content-between mb-2">                                <span class="text-muted">Envío</span>                                <span>${{precioEnvio() | separadorMiles:0}}</span>                            </div>                            <hr class="my-2">                            <div class="d-flex justify-content-between fw-bold">                                <span>Total</span>                                <span>${{ carritoSrv.totalPrecio() + precioEnvio() | separadorMiles:0 }}</span>                            </div>                        </div>                        <a (click)="pagar()" class="btn btn-primary w-100 mb-2">Pagar</a>                        <div class="d-flex justify-content-center align-items-center gap-2">                            <span class="text-muted small">o</span>                            <a [routerLink]="[\'/\']" class="btn btn-link text-primary p-0 d-flex align-items-center">                                Continuar Comprando                                <svg class="ms-1" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"                                    viewBox="0 0 24 24">                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"                                        stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />                                </svg>                            </a>                        </div>                    </div>                </div>            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AdminLayout', 'selector': 'app-admin-layout'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AgregarUsuario', 'selector': 'app-agregar-usuario'},{'name': 'App', 'selector': 'app-root'},{'name': 'CardProduct', 'selector': 'card-product'},{'name': 'CarritoCompras', 'selector': 'app-carrito-compras'},{'name': 'CategoriaProducto', 'selector': 'app-categoria-producto'},{'name': 'Contacto', 'selector': 'app-contacto'},{'name': 'ECommerceLayout', 'selector': 'app-e-commerce-layout'},{'name': 'EditarPerfil', 'selector': 'app-editar-perfil'},{'name': 'Home', 'selector': 'app-home'},{'name': 'Login', 'selector': 'app-login'},{'name': 'Navbar', 'selector': 'e-commerce-navbar'},{'name': 'NavbarAdmin', 'selector': 'admin-navbar-admin'},{'name': 'Perfil', 'selector': 'app-perfil'},{'name': 'Producto', 'selector': 'app-producto'},{'name': 'Registro', 'selector': 'app-registro'},{'name': 'Sidebar', 'selector': 'admin-sidebar'},{'name': 'Usuarios', 'selector': 'app-usuarios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarritoCompras'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarritoCompras.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+.container {
+  max-width: 600px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #ffca2c;
+  border-color: #ffca2c;
+  color: #000;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #e0b024;
+    border-color: #e0b024;
+  }
+}

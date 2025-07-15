@@ -41,6 +41,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-# Documentación generada con Compodoc
-/documentation

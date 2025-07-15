@@ -27,7 +27,18 @@ export class Navbar implements OnInit {
   public carritoSrv = inject(CarritoService);
   
   public usuario = computed(()=> this.localStoSrv.usuarioLogin());
+  public adminUsuario = computed(() => this.localStoSrv.adminUsuarioLogin());
+
 
   ngOnInit() {}
+
+    /**
+   * @description
+   * Determina la ruta para el botón de admin según si hay un usuario administrador logueado.
+   * @returns {string} La ruta a la que navegar ('/admin/productos' si está logueado, '/admin/login' si no).
+   */
+  getAdminRoute(): string {
+    return this.adminUsuario() ? '/admin/usuarios' : '/login-admin';
+  }
   
 }

@@ -26,7 +26,14 @@ export default class Home implements OnInit {
    * Inicializa el componente cargando los productos filtrados por la consola "Super Famicom"
    */
   ngOnInit(): void {
-      this.productos.set(this.productosService.listaProductos().filter(prod => prod.consola === 'Super Famicom' ))
+    this.productosService.getAllProductos().subscribe({
+      next: (res) => {
+        this.productos.set(res.filter(prod => prod.consola === 'Super Famicom' ))
+      },
+      error: (error) => {
+        console.log((error));
+      }
+    });
   }
 
 }

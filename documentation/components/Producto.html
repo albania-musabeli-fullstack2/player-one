@@ -1,0 +1,803 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>player-one documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">player-one documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Producto</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/e-commerce/pages/producto/producto.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que muestra los detalles de un producto específico en el e-commerce.
+Obtiene el producto basado en el ID proporcionado en la ruta y permite añadirlo al carrito</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-producto</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                            <code>SeparadorMilesPipe</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./producto.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./producto.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#carritoSrv" >carritoSrv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#producto" >producto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#productoId" >productoId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#productoService" >productoService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#route" >route</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#routeSubscription" >routeSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Añade el producto actual al carrito de compras.
+Llama al método agregarProducto del servicio CarritoService con el producto almacenado en la señal producto.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa el componente suscribiéndose a los parámetros de la ruta.
+Actualiza la señal productoId con el parámetro &#39;id&#39; de la ruta y busca el producto correspondiente
+en la lista de productos del servicio ProductosService.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carritoSrv"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>carritoSrv</b></span>
+                        <a href="#carritoSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CarritoService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="producto"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>producto</b></span>
+                        <a href="#producto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;ProductoI | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>productoId</b></span>
+                        <a href="#productoId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;string | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>productoService</b></span>
+                        <a href="#productoService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ProductosService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="route"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>route</b></span>
+                        <a href="#route"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>routeSubscription</b></span>
+                        <a href="#routeSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/e-commerce/pages/producto/producto.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit, signal } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, ParamMap, RouterModule } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { ProductosService } from &#x27;../../services/productos/productos&#x27;;
+import { Producto as ProductoI } from &#x27;../../interfaces/producto.interface&#x27;;
+import { CarritoService } from &#x27;../../services/carrito/carrito-service&#x27;;
+import { SeparadorMilesPipe } from &#x27;../../../shared/pipes/separador-miles-pipe&#x27;;
+
+
+
+/**
+ * @description
+ * Componente que muestra los detalles de un producto específico en el e-commerce.
+ * Obtiene el producto basado en el ID proporcionado en la ruta y permite añadirlo al carrito
+ */
+@Component({
+  selector: &#x27;app-producto&#x27;,
+  imports: [
+    RouterModule,
+    SeparadorMilesPipe,
+  ],
+  templateUrl: &#x27;./producto.html&#x27;,
+  styleUrl: &#x27;./producto.scss&#x27;
+})
+export default class Producto implements OnInit {
+
+  public productoId &#x3D; signal&lt;string | null&gt;(null);
+  private routeSubscription: Subscription | undefined;
+  public producto &#x3D; signal&lt;ProductoI | null&gt;(null);
+
+  private route &#x3D; inject(ActivatedRoute);
+  private productoService &#x3D; inject(ProductosService);
+  private carritoSrv &#x3D; inject(CarritoService);
+
+  /**
+   * @description
+   * Inicializa el componente suscribiéndose a los parámetros de la ruta.
+   * Actualiza la señal productoId con el parámetro &#x27;id&#x27; de la ruta y busca el producto correspondiente
+   * en la lista de productos del servicio ProductosService.
+   */
+  ngOnInit() {
+    this.routeSubscription &#x3D; this.route.paramMap.subscribe((params: ParamMap) &#x3D;&gt; {
+      this.productoId.set(params.get(&#x27;id&#x27;));
+      console.log(this.productoId())
+      console.log(this.productoService.listaProductos())
+      const producto &#x3D; this.productoService.listaProductos().find(prod &#x3D;&gt; prod.id &#x3D;&#x3D;&#x3D; +this.productoId()!)
+
+      console.log(producto);
+
+      if (producto) {
+        this.producto.set(producto);
+      }
+
+    })
+  }
+
+
+  /**
+   * @description
+   * Añade el producto actual al carrito de compras.
+   * Llama al método agregarProducto del servicio CarritoService con el producto almacenado en la señal producto.
+   * @returns {void}
+   */
+  agregarAlCarrito() {
+    this.carritoSrv.agregarProducto(this.producto()!)
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;mt-5 animate__animated animate__fadeInLeft&quot;&gt;{{ producto()?.nombre }}&lt;/h1&gt;
+&lt;hr class&#x3D;&quot;border-2&quot;&gt;
+
+&lt;div class&#x3D;&quot;row justify-content-center g-4&quot;&gt;
+
+    &lt;!-- Card de Imagen Juego--&gt;
+    &lt;div class&#x3D;&quot; text-center col-lg-6 col-md-12&quot;&gt;
+        &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;{{ producto()?.urlImagen }}&quot; alt&#x3D;&quot;Super M&quot; style&#x3D;&quot;width: 30rem; height: auto;&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Card de info de producto --&gt;
+    &lt;div class&#x3D;&quot;col-lg-6 col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;card shadow mb-4&quot;&gt;
+            &lt;div class&#x3D;&quot;card-header d-flex justify-content-between align-items-center bg-white&quot;&gt;
+                &lt;h5 class&#x3D;&quot;card-title mb-0&quot;&gt;Información del Producto&lt;/h5&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;!-- Precio --&gt;
+                &lt;div class&#x3D;&quot;info-item&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                        &lt;span class&#x3D;&quot;material-icons text-muted me-3&quot;&gt;attach_money&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;small class&#x3D;&quot;text-muted d-block&quot;&gt;Precio&lt;/small&gt;
+                            &lt;div class&#x3D;&quot;mt-1&quot;&gt;
+                                &lt;div class&#x3D;&quot;fw-medium&quot;&gt;{{ producto()?.precio | separadorMiles:0 }}&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;hr class&#x3D;&quot;my-3&quot;&gt;
+
+                &lt;!-- Consola --&gt;
+                &lt;div class&#x3D;&quot;info-item&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                        &lt;span class&#x3D;&quot;material-icons text-muted me-3&quot;&gt;videogame_asset&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;small class&#x3D;&quot;text-muted d-block&quot;&gt;Consola&lt;/small&gt;
+                            &lt;div class&#x3D;&quot;mt-1&quot;&gt;
+                                &lt;div class&#x3D;&quot;fw-medium&quot;&gt;{{ producto()?.consola }}&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;hr class&#x3D;&quot;my-3&quot;&gt;
+
+                &lt;div class&#x3D;&quot;info-item&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                        &lt;span class&#x3D;&quot;material-icons text-muted me-3&quot;&gt;sports_esports&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;small class&#x3D;&quot;text-muted d-block&quot;&gt;Categoría del Juego&lt;/small&gt;
+                            &lt;span class&#x3D;&quot;fw-medium&quot;&gt;{{ producto()?.categoriaJuego }}&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;hr class&#x3D;&quot;my-3&quot;&gt;
+
+                &lt;!-- Teléfono --&gt;
+                &lt;div class&#x3D;&quot;info-item&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                        &lt;span class&#x3D;&quot;material-icons text-muted me-3&quot;&gt;sports_esports&lt;/span&gt;
+                        &lt;div&gt;
+                            &lt;small class&#x3D;&quot;text-muted d-block&quot;&gt;Categoría del Producto&lt;/small&gt;
+                            &lt;span class&#x3D;&quot;fw-medium&quot;&gt;{{ producto()?.categoriaProducto }}&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;button (click)&#x3D;&quot;agregarAlCarrito()&quot;  type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;
+               &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+                 &lt;span class&#x3D;&quot;material-icons text-light me-2&quot;&gt;add_shopping_cart&lt;/span&gt;
+                &lt;span&gt;Agregar al carrito&lt;/span&gt;
+               &lt;/div&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h1 class="mt-5 animate__animated animate__fadeInLeft">{{ producto()?.nombre }}</h1><hr class="border-2"><div class="row justify-content-center g-4">    <!-- Card de Imagen Juego-->    <div class=" text-center col-lg-6 col-md-12">        <img class="img-fluid" src="{{ producto()?.urlImagen }}" alt="Super M" style="width: 30rem; height: auto;">    </div>    <!-- Card de info de producto -->    <div class="col-lg-6 col-md-12">        <div class="card shadow mb-4">            <div class="card-header d-flex justify-content-between align-items-center bg-white">                <h5 class="card-title mb-0">Información del Producto</h5>            </div>            <div class="card-body">                <!-- Precio -->                <div class="info-item">                    <div class="d-flex align-items-center">                        <span class="material-icons text-muted me-3">attach_money</span>                        <div>                            <small class="text-muted d-block">Precio</small>                            <div class="mt-1">                                <div class="fw-medium">{{ producto()?.precio | separadorMiles:0 }}</div>                            </div>                        </div>                    </div>                </div>                <hr class="my-3">                <!-- Consola -->                <div class="info-item">                    <div class="d-flex align-items-center">                        <span class="material-icons text-muted me-3">videogame_asset</span>                        <div>                            <small class="text-muted d-block">Consola</small>                            <div class="mt-1">                                <div class="fw-medium">{{ producto()?.consola }}</div>                            </div>                        </div>                    </div>                </div>                <hr class="my-3">                <div class="info-item">                    <div class="d-flex align-items-center">                        <span class="material-icons text-muted me-3">sports_esports</span>                        <div>                            <small class="text-muted d-block">Categoría del Juego</small>                            <span class="fw-medium">{{ producto()?.categoriaJuego }}</span>                        </div>                    </div>                </div>                <hr class="my-3">                <!-- Teléfono -->                <div class="info-item">                    <div class="d-flex align-items-center">                        <span class="material-icons text-muted me-3">sports_esports</span>                        <div>                            <small class="text-muted d-block">Categoría del Producto</small>                            <span class="fw-medium">{{ producto()?.categoriaProducto }}</span>                        </div>                    </div>                </div>            </div>        </div>        <div>            <button (click)="agregarAlCarrito()"  type="button" class="btn btn-primary">               <div class="d-flex">                 <span class="material-icons text-light me-2">add_shopping_cart</span>                <span>Agregar al carrito</span>               </div>            </button>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminLayout', 'selector': 'app-admin-layout'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AgregarUsuario', 'selector': 'app-agregar-usuario'},{'name': 'App', 'selector': 'app-root'},{'name': 'CardProduct', 'selector': 'card-product'},{'name': 'CarritoCompras', 'selector': 'app-carrito-compras'},{'name': 'CategoriaProducto', 'selector': 'app-categoria-producto'},{'name': 'Contacto', 'selector': 'app-contacto'},{'name': 'ECommerceLayout', 'selector': 'app-e-commerce-layout'},{'name': 'EditarPerfil', 'selector': 'app-editar-perfil'},{'name': 'Home', 'selector': 'app-home'},{'name': 'Login', 'selector': 'app-login'},{'name': 'Navbar', 'selector': 'e-commerce-navbar'},{'name': 'NavbarAdmin', 'selector': 'admin-navbar-admin'},{'name': 'Perfil', 'selector': 'app-perfil'},{'name': 'Producto', 'selector': 'app-producto'},{'name': 'Registro', 'selector': 'app-registro'},{'name': 'Sidebar', 'selector': 'admin-sidebar'},{'name': 'Usuarios', 'selector': 'app-usuarios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Producto'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Producto.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,4 +1,16 @@
-<p>admin-layout works!</p>
+<!-- Navbar -->
+<admin-navbar-admin></admin-navbar-admin>
+
+<!-- Page Wrapper -->
+<main class="main_container d-flex">
+
+    <!-- sidebar -->
+    <admin-sidebar></admin-sidebar>
 
 
-<router-outlet></router-outlet>
+    <!-- pages -->
+     <div class="container-fluid p-3" >
+        <router-outlet></router-outlet>
+     </div>
+
+</main>
