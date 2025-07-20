@@ -121,16 +121,33 @@
 <li>Iniciar servidor para ver la documentación</li>
 </ol>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run compodoc:server</code></pre></div><h2>Pruebas Unitarias</h2>
-<p>Se realizaron pruebas unitarias a los siguientes componentes:</p>
+<p>Se realizaron pruebas unitarias (7 en total) a los siguientes componentes:</p>
 <ul>
 <li>Contacto Component</li>
 <li>Producto Service</li>
 <li>Local Storage Service</li>
+<li>Separador Miles Pipe</li>
 </ul>
 <ol>
 <li>Ejecutar las pruebas</li>
 </ol>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run test</code></pre></div>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npm run test</code></pre></div><h2>Nuevos requerimientos</h2>
+<ul>
+<li>Cargar los productos desde un JSON alojado en Github pages llamandolo desde una petición http GET</li>
+<li>Agregar módulo de panel administrativo para CRUD de usuarios</li>
+<li>Agregar archivo de configuración de Docker (dockerfile, dockerignore) para crear imagen de nginx para levantar servidor web con la aplicación de Angular</li>
+</ul>
+<h2>Servidor con Docker</h2>
+<ul>
+<li>Crear imagen de servidor nginx</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker build -t player-one .</code></pre></div><ul>
+<li>Crear contenedor</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -d -p 8080:80 --name angular-prod player-one</code></pre></div><ul>
+<li>Ver sitio web dockerizado de forma local</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-url">http://localhost:8080/</code></pre></div>
 
 
 

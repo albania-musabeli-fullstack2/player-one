@@ -51,14 +51,19 @@ npm run compodoc
 npm run compodoc:server
 ```
 
+3. Ver documentación generada usando compodoc
+```url
+http://localhost:8080/
+```
 
 ## Pruebas Unitarias
 
-Se realizaron pruebas unitarias a los siguientes componentes:
+Se realizaron pruebas unitarias (7 en total) a los siguientes componentes:
 
 * Contacto Component
 * Producto Service
 * Local Storage Service
+* Separador Miles Pipe
 
 
 1. Ejecutar las pruebas
@@ -84,10 +89,10 @@ docker build -t player-one .
 
 * Crear contenedor
 ```bash
-docker run -d -p 8080:80 --name angular-prod player-one
+docker run -d -p 8081:80 --name angular-prod player-one
 ```
 
 * Ver sitio web dockerizado de forma local
 ```url
-http://localhost:8080/
+http://localhost:8081/
 ```
